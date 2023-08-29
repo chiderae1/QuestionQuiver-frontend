@@ -15,6 +15,7 @@ import Banner from './component/Banner';
 // context
 import useQuestionContext from './hooks/useQuestionContext';
 import useAuthContext from './hooks/useAuthContext';
+import Invalid from './pages/Invalid';
 
 
 
@@ -35,7 +36,7 @@ function App() {
           <Route path='/signup' element = {!Auth ? <Signup/> : <Navigate to= '/'/>}/>
           <Route path='/leaderboard' element={Auth ? <Leaderboard /> : <Navigate to='/login' />} />
 
-          <Route path='/*' element={<NotFound />} />
+          <Route path='*' element={<Invalid />} />
         </Routes>
       </BrowserRouter>
     </div>
