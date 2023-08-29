@@ -1,23 +1,43 @@
-import logo from './logo.svg';
+
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
 
+// component 
+import Home from './pages/Home';
+import Questions from './component/Questions';
+import Navigation from './component/Navigation';
+import Login from './pages/Login';
+import NotFound from './component/NotFound';
+import Signup from './pages/Signup';
+import Leaderboard from './component/Leaderboard';
+import Banner from './component/Banner';
+
+// context
+import useQuestionContext from './hooks/useQuestionContext';
+import useAuthContext from './hooks/useAuthContext';
+
+
+
 function App() {
+  const { Auth } = useAuthContext()
+  const { validate } = useQuestionContext()
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        {validate && <Banner />}
+        <Navigation />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/:test' element={<Questions />} />
+          <Route path='/error' element={<NotFound />} />
+          <Route path='/login' element = {!Auth ? <Login /> : <Navigate to = '/'/>}/>
+          <Route path='/signup' element = {!Auth ? <Signup/> : <Navigate to= '/'/>}/>
+          <Route path='/leaderboard' element={Auth ? <Leaderboard /> : <Navigate to='/login' />} />
+
+          <Route path='/*' element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

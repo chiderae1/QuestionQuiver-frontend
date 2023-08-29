@@ -68,3 +68,37 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+Welcome to the QuestionQuiver Website project! This web application is designed to facilitate user authentication, exam attempts, scoring, and leaderboarding.
+
+
+## Introduction
+
+This project is built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. It consists of one main component: the the client website for users to attempt exams.
+
+## Features
+
+   Browse and select available exams
+   Timed exams with countdown timer
+   User authentication and secure access
+   Score display and leaderboard ranking
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (version v18.16.0.)
+- MongoDB (version v6.0.6)
+
+Install server dependencies:
+cd ../client
+npm install
+
+Start the client:
+cd ../client
+npm start
+
+Client Website:
+Access the user portal at http://localhost:3001 to browse and attempt exams.
