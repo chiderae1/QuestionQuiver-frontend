@@ -37,7 +37,8 @@ const Signup = () => {
         if(response.ok)
         {   
             dispatch({type : 'LOGIN' , payload : json})
-            localStorage.setItem('QuestionQuiver',JSON.stringify(json.Email))
+            // console.log(json)
+            localStorage.setItem('QuestionQuiver',JSON.stringify(json.email))
             if (path) {
                 navigate(`${path}`)      
             }
@@ -102,7 +103,7 @@ const Signup = () => {
                         />
                     </InputGroup>
 
-                    <Button as="input" type="submit" variant="secondary" value="Login" className='w-25' />
+                    <Button as="input" type="submit" variant="secondary" value="Signup" className='w-25' />
                 </Form>
                     {error && <div className='error w-25'>{error}</div>} 
                 

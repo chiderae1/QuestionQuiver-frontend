@@ -57,7 +57,7 @@ const Login = () => {
             if(!path && !ExamName)
             {
                 navigate('/')
-                console.log('running')
+                // console.log('running')
             }
         }
 
