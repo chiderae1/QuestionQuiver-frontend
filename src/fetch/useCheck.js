@@ -22,10 +22,9 @@ const useCheck = (username, ExamName) => {
     
     // RRD
     const navigate = useNavigate();
-    
+    const Url = process.env.REACT_APP_API_URL
     useEffect(() => {
         const request = { username, ExamName }
-        const Url = process.env.REACT_APP_API_URL
         const checkAttempted = async () => {
             const response = await fetch(`${Url}/api/get/test/check/leadboard`, {
                 method: 'POST',

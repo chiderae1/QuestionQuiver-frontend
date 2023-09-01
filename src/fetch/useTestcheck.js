@@ -18,6 +18,8 @@ const useTestContext = (load, attempted, Not_Attempted, examname) => {
     const { dispatch: scoredispatch } = useTimerContext()
     const { dispatch: invisibledispatch } = useUserContext()
     const navigate = useNavigate();
+
+    const Url = process.env.REACT_APP_API_URL
     return (
         useEffect(() => {
             // doesn't run till response is gotten from backend
@@ -33,7 +35,7 @@ const useTestContext = (load, attempted, Not_Attempted, examname) => {
                         invisibledispatch({ type: 'GET_INVISIBLE', payload: false })
                     }
                 }
-
+                
                 if (Not_Attempted) {
                     // if not attempted and user is logged in then give him access validate to false to hide banner
                     if (Not_Attempted && Auth) {
@@ -48,7 +50,7 @@ const useTestContext = (load, attempted, Not_Attempted, examname) => {
                         // start stopwatch
                         time({ type: 'STOPWATCH', payload: true })
 
-                        window.open(`http://localhost:3000/${examname}`, '_blank');
+                        window.open(`${Url}/${examname}`, '_blank');
                     }
                     // if not attempted but user not logged in then navigate to login page validate to false to hide banner
                     if (Not_Attempted && !Auth) {
