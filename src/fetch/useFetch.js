@@ -38,6 +38,7 @@ const useFetch = (url,currentPath) => {
             if(!response.ok)
             {
                 setError(json.error)
+                console.log(json.error)
             }
         }
 
