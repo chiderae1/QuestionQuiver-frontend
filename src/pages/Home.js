@@ -3,7 +3,7 @@ import { useEffect } from "react"
 
 // usecontext
 import useTestContext from '../hooks/useTestContext'
-// import useAnswers from "../hooks/useAnswers"
+
 // component
 import Test from "../component/Test"
 
@@ -11,7 +11,6 @@ import Test from "../component/Test"
 const Home = () => {
     // usecontext
     const {  dispatch: testdispatch } = useTestContext()
-    // const {api} = useAnswers()
     // when the page loads get the name of the exams
     useEffect(() => {
         const Url = process.env.REACT_APP_API_URL

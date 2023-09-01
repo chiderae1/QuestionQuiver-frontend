@@ -19,7 +19,8 @@ const useTestContext = (load, attempted, Not_Attempted, examname) => {
     const { dispatch: invisibledispatch } = useUserContext()
     const navigate = useNavigate();
 
-    const Url = process.env.REACT_APP_API_URL
+    const currentURL = window.location.href;
+    
     return (
         useEffect(() => {
             // doesn't run till response is gotten from backend
@@ -35,6 +36,7 @@ const useTestContext = (load, attempted, Not_Attempted, examname) => {
                         invisibledispatch({ type: 'GET_INVISIBLE', payload: false })
                     }
                 }
+                // http://localhost:8080/TMC411
                 
                 if (Not_Attempted) {
                     // if not attempted and user is logged in then give him access validate to false to hide banner
@@ -50,7 +52,7 @@ const useTestContext = (load, attempted, Not_Attempted, examname) => {
                         // start stopwatch
                         time({ type: 'STOPWATCH', payload: true })
 
-                        window.open(`${Url}/${examname}`, '_blank');
+                        window.open(`${currentURL}/${examname}`, '_blank');
                     }
                     // if not attempted but user not logged in then navigate to login page validate to false to hide banner
                     if (Not_Attempted && !Auth) {
