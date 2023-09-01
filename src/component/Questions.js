@@ -25,7 +25,7 @@ const Questions = () => {
     const Url = process.env.REACT_APP_API_URL
     
     // context
-    
+    console.log(currentPath)
     const { Auth } = useAuthContext()
     
     // if not logged in go to the login page
