@@ -16,7 +16,6 @@ import Stopwatch from './Stopwatch';
 
 // fetch
 import useSubmit from '../fetch/useSubmit';
-import { Answers } from '../context/AnswersContext';
 
 const QuestionDetails = ({ Questions ,Time}) => {
 
