@@ -9,11 +9,11 @@ import React from 'react'
 const Leaderboard = () => {
     const ExamName = JSON.parse(localStorage.getItem('ExamName'))
     const [leadboard, setLeaderboard] = useState('')
-
+    const Url = process.env.REACT_APP_API_URL
     useEffect(() => {
 
         const fetchdata = async () => {
-            const response = await fetch('http://localhost:8080/api/get/test/retrieve/leadboard',
+            const response = await fetch(`${Url}/api/get/test/retrieve/leadboard`,
                 {
                     method: "POST",
                     body: JSON.stringify({ ExamName }),
@@ -29,6 +29,7 @@ const Leaderboard = () => {
             }
         }
         fetchdata()
+        // eslint-disable-next-line 
     }, [ExamName])
     return (
         <div className="leaderboard">

@@ -8,7 +8,7 @@ export const AnswersReducer = (state,action) =>
 {
     switch(action.type)
     {
-        case 'Answers':
+        case 'Api':
             return{Answers : action.payload}
         default:
             return state
@@ -16,7 +16,7 @@ export const AnswersReducer = (state,action) =>
 }
 
 const AnswersProvider = ({children}) => {
-    const [state,dispatch] = useReducer(AnswersReducer,{Answers : {}})
+    const [state,dispatch] = useReducer(AnswersReducer,{Api : 'https://questionsquiver.onrender.com'})
     return ( 
         <Answers.Provider value = {{...state,dispatch}}>
             {children}

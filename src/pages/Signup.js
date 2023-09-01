@@ -17,12 +17,14 @@ const Signup = () => {
     const {dispatch} = useAuthContext()
     const path = JSON.parse(localStorage.getItem('path'))
     const ExamName = JSON.parse(localStorage.getItem('ExamName'))
+
+    const Url = process.env.REACT_APP_API_URL
     const handleSubmit = async(e) => 
     {
         e.preventDefault()
         const register = {email,password,username}
 
-        const response = await fetch('http://localhost:8080/api/get/signup',{
+        const response = await fetch(`${Url}/api/get/signup`,{
             method : "POST",
             body : JSON.stringify(register),
             headers : {"Content-Type" : 'application/json'}

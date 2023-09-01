@@ -22,6 +22,7 @@ const Test = () => {
     const [examname, setExamname] = useState('')
 
 
+    const Url = process.env.REACT_APP_API_URL
     // to check if user has attempted  question already
     const handleClick = async (ExamName) => {
         
@@ -29,7 +30,7 @@ const Test = () => {
         const username = JSON.parse(localStorage.getItem('QuestionQuiver'))
         const register = { username, ExamName }
         // we send the email and examname to the backend to check if they exist in the database
-        const response = await fetch('http://localhost:8080/api/get/test/check/leadboard',
+        const response = await fetch(`${Url}/api/get/test/check/leadboard`,
             {
                 method: 'POST',
                 body: JSON.stringify(register),

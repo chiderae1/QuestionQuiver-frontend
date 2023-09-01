@@ -25,8 +25,9 @@ const useCheck = (username, ExamName) => {
     
     useEffect(() => {
         const request = { username, ExamName }
+        const Url = process.env.REACT_APP_API_URL
         const checkAttempted = async () => {
-            const response = await fetch('http://localhost:8080/api/get/test/check/leadboard', {
+            const response = await fetch(`${Url}/api/get/test/check/leadboard`, {
                 method: 'POST',
                 body: JSON.stringify(request),
                 headers: { 'Content-Type': 'application/json' }

@@ -10,10 +10,10 @@ const useSubmit = () => {
     // context
     const {dispatch} = useUserContext()
     const {dispatch: scoredispatch} = useTimerContext()  
-    
+    const Url = process.env.REACT_APP_API_URL
     const submit = async(selectedValue,ExamName,Auth) => 
     {
-        const response = await fetch('http://localhost:8080/api/get/test/score', {
+        const response = await fetch(`${Url}/api/get/test/score`, {
             method: 'POST',
             body: JSON.stringify(selectedValue),
             headers: { 'Content-Type': 'application/json ' }

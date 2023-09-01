@@ -22,6 +22,7 @@ const Questions = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const currentPath = location.pathname;
+    const Url = process.env.REACT_APP_API_URL
     
     // context
     
@@ -38,7 +39,7 @@ const Questions = () => {
     useCheck(Auth,currentPath.slice(1))
 
     // to get the exam Questions
-    const { paper, error,time } = useFetch('http://localhost:8080/api/get/test', currentPath.slice(1))
+    const { paper, error,time } = useFetch(`${Url}/api/get/test`, currentPath.slice(1))
     
     // start stop watch
     

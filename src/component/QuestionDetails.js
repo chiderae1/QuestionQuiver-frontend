@@ -16,6 +16,7 @@ import Stopwatch from './Stopwatch';
 
 // fetch
 import useSubmit from '../fetch/useSubmit';
+import { Answers } from '../context/AnswersContext';
 
 const QuestionDetails = ({ Questions ,Time}) => {
 
@@ -63,8 +64,7 @@ const QuestionDetails = ({ Questions ,Time}) => {
 
         setAnswers(selectedValue)
         const {scores,invisibles} = await submit(selectedValue,ExamName,Auth.email)
-        // setselectedValue({})
-        // sessionStorage.removeItem('clickedAnswers')
+       
         
         // set invisible to true to show score's and answers
         dispatch({type: 'GET_INVISIBLE' , payload : invisibles})
@@ -73,6 +73,10 @@ const QuestionDetails = ({ Questions ,Time}) => {
         // stop stopwatch from running
         stoptimedispatch({type:'STOPWATCH', payload : false})
         
+    }
+
+    const handleleaderboard = () => {
+        setselectedValue({})
     }
 
     return (
@@ -151,7 +155,7 @@ const QuestionDetails = ({ Questions ,Time}) => {
                     <p className="lead pt-2 fw-bold text-white">Score:{score}</p>
                 }
                 {invisible &&
-                    <Link to='/leaderboard' className='text-white text-decoration-none' >
+                    <Link to='/leaderboard' onClick={handleleaderboard} className='text-white text-decoration-none' >
                         See where you rank among others
                     </Link>
                 }
