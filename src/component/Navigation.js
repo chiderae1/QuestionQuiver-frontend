@@ -36,7 +36,7 @@ const Navigation = () => {
 
             {Auth && 
                 <div className="d-inline">
-                    {/* <span className='fw-bold text-white'>{Auth}</span> */}
+                    <span className='fw-bold text-white'>{Auth}</span>
                     <Button className='m-3' variant="secondary" onClick={handleLogout}>Logout</Button>
                 </div>
             }
