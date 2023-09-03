@@ -72,7 +72,6 @@ const Test = () => {
                         </Link>
                     </div>
                 )
-
             })}
         </div>
     );
