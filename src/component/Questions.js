@@ -25,7 +25,6 @@ const Questions = () => {
     const Url = process.env.REACT_APP_API_URL
     
     // context
-    console.log(currentPath)
     const { Auth } = useAuthContext()
     
     // if not logged in go to the login page
@@ -42,13 +41,12 @@ const Questions = () => {
     const { paper, error,time } = useFetch(`${Url}/api/get/test`, currentPath.slice(1))
     
     // start stop watch
-    
 
     return (
         <div className="Question-page">
             {error && <div className="">{error}</div>}
             {/* display the questions */}
-            <QuestionDetails Questions={paper} Time = {time} />
+            {paper ? <QuestionDetails Questions={paper} Time = {time} /> :  <p className="loading">LOADING!!!</p>}
         </div>
     )
 }

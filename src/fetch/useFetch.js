@@ -20,7 +20,7 @@ const useFetch = (url,currentPath) => {
         {
             // send examname to backend to get all the question's with the exam name
             const request = {ExamName: currentPath}
-            const response =await fetch(url,{
+            const response = await fetch(url,{
                 method : 'POST',
                 body : JSON.stringify(request),
                 headers : {'Content-Type' : 'application/json'}

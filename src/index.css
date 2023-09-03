@@ -137,3 +137,11 @@ code {
   color: red;
   font-weight: bold;
 }
+
+.loading{
+  position: absolute;
+  top: 150px;  
+  padding: 100px;
+  color: red;
+  font-weight: bold;
+}
