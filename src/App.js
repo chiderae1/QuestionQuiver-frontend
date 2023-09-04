@@ -30,7 +30,6 @@ function App() {
         <Navigation />
         <Routes>
           <Route path='/' element={<Home />} />
-          {/* <Route path='/:test' element={<Questions />} /> */}
           <Route path='/:test' element={<Questions />} />
           <Route path='/error' element={<NotFound />} />
           <Route path='/login' element = {!Auth ? <Login /> : <Navigate to = '/'/>}/>
