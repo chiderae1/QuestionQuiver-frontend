@@ -19,7 +19,7 @@ const useTestContext = (load, attempted, Not_Attempted, examname) => {
     const { dispatch: invisibledispatch } = useUserContext()
     const navigate = useNavigate();
 
-    // const currentURL = window.location.href;
+    const currentURL = window.location.href;
     
     return (
         useEffect(() => {
@@ -52,8 +52,8 @@ const useTestContext = (load, attempted, Not_Attempted, examname) => {
                         // start stopwatch
                         time({ type: 'STOPWATCH', payload: true })
 
-                        // window.open(`${currentURL}${examname}`, '_blank');
-                        navigate(`/${examname}`)
+                        window.open(`${currentURL}${examname}`, '_blank');
+                        // navigate(`/${examname}`)
                     }
                     // if not attempted but user not logged in then navigate to login page validate to false to hide banner
                     if (Not_Attempted && !Auth) {

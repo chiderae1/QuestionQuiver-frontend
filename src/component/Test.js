@@ -63,7 +63,7 @@ const Test = () => {
     return (
         <div className="test-body p-3">
             <p className="lead fw-bold text-white d-flex justify-content-center quizzes">AVAILABLE QUIZZES</p>
-            {test && test.map((item, index) => {
+            {test ? test.map((item, index) => {
                 return (
                     <div className="p-3" key={index}>
                         <Link onClick={() => handleClick(item)} className='text-decoration-none text-white'>
@@ -72,7 +72,7 @@ const Test = () => {
                         </Link>
                     </div>
                 )
-            })}
+            }): <p className="test-loading">LOADING!!!</p>}
         </div>
     );
 }
