@@ -38,8 +38,7 @@ const Signup = () => {
         }
         if(response.ok)
         {   
-            dispatch({type : 'LOGIN' , payload : json})
-            // console.log(json)
+            dispatch({type : 'LOGIN' , payload : json.email})
             localStorage.setItem('QuestionQuiver',JSON.stringify(json.email))
             if (path) {
                 navigate(`${path}`)      
