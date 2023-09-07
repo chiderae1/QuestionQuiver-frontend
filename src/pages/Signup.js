@@ -65,7 +65,7 @@ const Signup = () => {
                     <h5 className="diplay-5 p-3 fw-bold">Signup</h5>
                     <InputGroup className="mb-3 w-25">
                         <InputGroup.Text id="basic-addon1">
-                            <span className='material-symbols-outlined'>lock</span>
+                            <span className='material-symbols-outlined'>person</span>
                         </InputGroup.Text>
                         <Form.Control
                             placeholder="username"

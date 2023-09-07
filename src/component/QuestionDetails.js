@@ -76,6 +76,7 @@ const QuestionDetails = ({ Questions ,Time}) => {
 
     const handleleaderboard = () => {
         setselectedValue({})
+        sessionStorage.removeItemItem('clickedAnswers')
     }
 
     return (
